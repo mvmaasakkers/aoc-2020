@@ -23,9 +23,7 @@ namespace Day02
         public int ComputePart2()
         {
             return _input.Select(t => t)
-                .Where(c => (
-                    (c.Password[c.Min - 1] == c.Char && c.Password[c.Max - 1] != c.Char) ||
-                    (c.Password[c.Min - 1] != c.Char && c.Password[c.Max - 1] == c.Char))).ToList().Count;
+                .Where(c => c.Password[c.Min - 1] == c.Char ^ c.Password[c.Max - 1] == c.Char).ToList().Count;
         }
     }
 }
