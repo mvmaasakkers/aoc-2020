@@ -25,7 +25,7 @@ namespace Day08
             for (int skip = 0; skip < allOptions.Count; skip++) // 4
             {
                 var skipping = 0;
-                var opt = new List<Instruction>(_input);
+                var opt = new List<Instruction>(_input.Select(t => new Instruction(t.Command, t.Value)));
                 for (int k = 0; k < _input.Count; k++)
                 {
                     if (_input[k].Command == "nop")
